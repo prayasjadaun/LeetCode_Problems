@@ -1,24 +1,41 @@
 /*
- Alice and Bob each created one problem for HackerRank. A reviewer rates the two challenges, awarding points on a scale from 1 to 100 for three categories: problem clarity, originality, and difficulty.
-The rating for Alice's challenge is the triplet a = (a[0], a[1], a[2]), and the rating for Bob's challenge is the triplet b = (b[0], b[1], b[2]).
-The task is to find their comparison points by comparing a[0] with b[0], a[1] with b[1], and a[2] with b[2].
-If a[i] > b[i], then Alice is awarded 1 point.
-If a[i] < b[i], then Bob is awarded 1 point.
-If a[i] = b[i], then neither person receives a point.
-Comparison points is the total points a person earned.
+ Kids With the Greatest Number of Candies
+There are n kids with candies. You are given an integer array candies, where each candies[i] represents the number of candies the ith kid has, and an integer extraCandies, denoting the number of extra candies that you have.
+Return a boolean array result of length n, where result[i] is true if, after giving the ith kid all the extraCandies, they will have the greatest number of candies among all the kids, or false otherwise.
+Note that multiple kids can have the greatest number of candies.
 
-Given a and b, determine their respective comparison points.
+Example 1:
 
-Example
-
-a = [1, 2, 3]
-b = [3, 2, 1]
-For elements *0*, Bob is awarded a point because a[0] .
-For the equal elements a[1] and b[1], no points are earned.
-Finally, for elements 2, a[2] > b[2] so Alice receives a point.
-The return array is [1, 1] with Alice's score first and Bob's second.
+Input: candies = [2,3,5,1,3], extraCandies = 3
+Output: [true,true,true,false,true] 
+Explanation: If you give all extraCandies to:
+- Kid 1, they will have 2 + 3 = 5 candies, which is the greatest among the kids.
+- Kid 2, they will have 3 + 3 = 6 candies, which is the greatest among the kids.
+- Kid 3, they will have 5 + 3 = 8 candies, which is the greatest among the kids.
+- Kid 4, they will have 1 + 3 = 4 candies, which is not the greatest among the kids.
+- Kid 5, they will have 3 + 3 = 6 candies, which is the greatest among the kids.
  */
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Problem09 {
-    
+    public static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        List<Boolean> result = new ArrayList<>();
+        int maxCandies = 0;
+        for (int candy : candies) {
+            maxCandies = Math.max(maxCandies, candy);
+        }
+        for (int candy : candies) {
+            result.add(candy + extraCandies >= maxCandies);
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] candies = { 2, 3, 5, 1, 3 };
+        int extraCandies = 3;
+        List<Boolean> result = kidsWithCandies(candies, extraCandies);
+        System.out.println(result);
+    }
 }
