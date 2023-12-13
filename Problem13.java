@@ -19,20 +19,17 @@ public class Problem13 {
         int maxwordscount = 0;
         for (String sentence : sentences) {
             String[] words = sentence.split(" ");
-            int maxcount = words.length;
-            if (maxcount > maxwordscount) {
-                maxwordscount = maxcount;
+            int wordcount = words.length;
+            if (wordcount > maxwordscount) {
+                maxwordscount = wordcount;
             }
-
         }
         return maxwordscount;
-
     }
 
     public static void main(String[] args) {
         String[] sentences = { "alice and bob love leetcode", "i think so too", "this is great thanks very much" };
-        int  result = mostWordsFound(sentences);
-            System.out.println(result);
+        int result = mostWordsFound(sentences);
+        System.out.println(result);
     }
-
 }
