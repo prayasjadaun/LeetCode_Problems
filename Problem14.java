@@ -18,7 +18,7 @@ Explanation: If arr = [1,0,2,1], then first = 1 and encoded = [1 XOR 0, 0 XOR 2,
 public class Problem14 {
     public static int[] decode(int[] encoded, int first) {
         int[] arr = new int[encoded.length + 1];
-        arr[0] =  first;
+        arr[0] = first;
         for (int i = 0; i < encoded.length; i++) {
             arr[i + 1] = encoded[i];
         }
@@ -27,12 +27,13 @@ public class Problem14 {
         }
         return arr;
     }
-    public static void main(String[]args){
-        int [] encoded = {1,2,3};
+
+    public static void main(String[] args) {
+        int[] encoded = { 1, 2, 3 };
         int first = 1;
-        int [] result = decode(encoded, first);
-        for(int i : result){
-            System.out.print(i+",");
+        int[] result = decode(encoded, first);
+        for (int i : result) {
+            System.out.print(i + ",");
         }
     }
 }
