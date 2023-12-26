@@ -27,9 +27,9 @@ public class Problem17 {
                     divisorCount++;
                     divisorSum += i;
                 }
-                // if (divisorCount > 4) {
-                //     break;
-                // }
+                if (divisorCount > 4) {
+                    break;
+                }
             }
             if (divisorCount == 4) {
                 sum += divisorSum;
