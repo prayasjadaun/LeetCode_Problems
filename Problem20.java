@@ -36,18 +36,17 @@ public class Problem20 {
         }
         return count;
     }
-    public static void main(String [] args){
+
+    public static void main(String[] args) {
         String ruleKey = "color";
-        String ruleValue = "silver"; 
-        
+        String ruleValue = "silver";
+
         List<List<String>> items = Arrays.asList(
-            Arrays.asList("phone", "blue", "pixel"),
-            Arrays.asList("computer", "silver", "lenovo"),
-            Arrays.asList("phone", "gold", "iphone")
-        );
-        
+                Arrays.asList("phone", "blue", "pixel"),
+                Arrays.asList("computer", "silver", "lenovo"),
+                Arrays.asList("phone", "gold", "iphone"));
+
         int result = countMatches(items, ruleKey, ruleValue);
         System.out.println(result);
     }
 }
-
