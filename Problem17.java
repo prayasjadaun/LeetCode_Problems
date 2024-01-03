@@ -14,7 +14,7 @@ Explanation:
 The answer is the sum of divisors of 21 only.
  */
 
-import java.util.*;
+
 
 public class Problem17 {
     public static int sumFourDivisors(int[] nums) {
