@@ -14,6 +14,8 @@ Explanation: We can choose indices 1 and 3 for the first pair (6, 7) and indices
 The product difference is (6 * 7) - (2 * 4) = 34.
  */
 
+
+
 public class Problem27 {
     public static int maxProductDifference(int[] nums) {
         int max1 = Integer.MIN_VALUE, max2 = Integer.MIN_VALUE;
@@ -33,6 +35,11 @@ public class Problem27 {
             }
         }
         return (max1 * max2) - (min1 * min2);
+        // int n=nums.length;
+        // Arrays.sort(nums);
+        // int max=nums[n-1]*nums[n-2];
+        // int min=nums[0]*nums[1];
+        // return max-min;
 
     }
 
